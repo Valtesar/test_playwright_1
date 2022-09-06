@@ -1,6 +1,8 @@
 from playwright.async_api import Page
+import pytest
 
 
+@pytest.mark.asyncio_cooperative
 class WebPage(object):
     def __init__(self, page: Page, height: int = 1600, width: int = 900):
         self.page = page
