@@ -60,7 +60,9 @@ class AnimationBlock:
         return attribute_before != attribute_after
 
     def get_animation_block_text(self):
-        """Метод получает текст из кнопок"""
+        """Метод получает текст из кнопок анимации, проверяет, что бы кол-во заголовков кнопок соответствовало
+           кол-ву тел кнопок. В случае соответствия --> возвращает True, иначе --> возвращает False.
+           Создает словарь где ключ - это текст заголовка кнопки, а значение - это текст тела кнопки."""
 
         self._animation_block_header_text = self.page.locator('//p[contains(@class, "a1zii3 h1zii3")]')\
             .all_text_contents()
