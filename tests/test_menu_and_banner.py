@@ -15,4 +15,10 @@ class TestMenuAndBanner:
         sleep(2)
         assert start_page.banner_block.get_banner_status()
         sleep(2)
+        start_page.reload()
+        sleep(3)
+        assert start_page.animation_block.get_animation_status()
+        sleep(2)
+        assert start_page.animation_block.get_animation_block_text()
+        sleep(2)
 
