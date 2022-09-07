@@ -1,20 +1,31 @@
+from abc import ABC
+
 from pages.web_page import WebPage
-from playwright.async_api import Page
+from playwright.sync_api import Page
 import pytest
 
 
-@pytest.mark.asyncio_cooperative
-class MainBankPage(WebPage):
+class MainBankPage(WebPage, ABC):
 
     def __init__(self, page: Page):
         super().__init__(page)
         self.url = 'https://alfabank.ru/'
 
-    async def pick_menu_block(self, index: int):
-        await self.page.locator(f'//*[contains(@class, "a3sPfj") and @tabindex = {index}]').click()
+    def pick_menu_block(self, index: int):
+        self.page.locator(f'//*[contains(@class, "a3sPfj") and @tabindex = {index}]').click()
 
-    async def get_block_status(self):
+    def animation_block(self):
+        return self.page.locator('//div[@class= "h3L1Y9"]').is_visible()
+
+    def get_block_info(self):
         pass
 
-    async def get_banner_status(self):
+    def get_banner_info(self):
         pass
+
+
+class AnimationBlock(MainBankPage):
+    def __init__(self, page: Page):
+        super().__init__(page)
+        pass
+
