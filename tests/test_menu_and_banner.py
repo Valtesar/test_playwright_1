@@ -1,9 +1,5 @@
 import pytest
-import logging
 from time import sleep
-from random import randrange
-
-logger = logging.getLogger('tests')
 
 
 class TestMenuAndBanner:
