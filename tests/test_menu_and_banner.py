@@ -8,8 +8,9 @@ logger = logging.getLogger('tests')
 
 class TestMenuAndBanner:
     def test_menu_and_banner(self, start_page):
-        assert start_page.animation_block()
-        start_page.pick_menu_block(randrange(4))
         sleep(5)
-        assert not start_page.animation_block()
-        sleep(4)
+        assert start_page.animation_block.get_animation_turnover()
+        start_page.pick_menu_block(randrange(4))
+        assert not start_page.animation_block.get_animation_status()
+        sleep(2)
+
