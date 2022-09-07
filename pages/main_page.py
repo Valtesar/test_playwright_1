@@ -98,7 +98,7 @@ class BannerBlock:
 
         elif attribute_hidden == 'true':
             self._banner_block_visibility = False
-            return False
+            return self._banner_block_visibility
         else:
             raise Exception('Something wrong with locator or object not located on page!')
 
