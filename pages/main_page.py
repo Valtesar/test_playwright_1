@@ -32,8 +32,13 @@ class MainBankPage(WebPage, ABC):
 
         self.page.locator(f'//*[contains(@class, "a3sPfj") and @tabindex = {current_index}]').click()
 
-    def pick_upper_menu_block(self, first_button, second_button):
+    def pick_upper_menu_block(self, first_button=None, second_button=None):
         """Метод наводит на нужную кнопку меню вверху экрана, и затем нажимает нужную кнопку в выпадающем меню"""
+        position = self.page.locator('(//div[@class="n1B_-k"])[1]').bounding_box()
+        self.page.mouse.move(126.875, 87.671875)
+        self.page.mouse.move(position['x'], position['y'])
+        print(position['x'], position['y'])
+        sleep(5)
 
 
 class AnimationBlock:
