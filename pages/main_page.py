@@ -1,6 +1,6 @@
 from abc import ABC
 from pages.web_page import WebPage
-from playwright.sync_api import Page
+from playwright.sync_api import Page, expect
 from random import randrange
 import pytest
 from time import sleep
@@ -44,12 +44,26 @@ class AnimationBlock:
         self._animation_block_header_text = None
         self._animation_block_body_text = None
 
-    def get_animation_status(self):
+    def get_animation_status(self, visible):
         """Метод проверяет, что анимация заполнения шкалы в карусели видна на странице"""
 
-        self._animation_block_visibility = self.page.locator('//div[@class= "h3L1Y9"]').is_visible()
+        locator = self.page.locator('//div[@class= "h3L1Y9"]')
 
-        return self._animation_block_visibility
+        if visible:
+            expect(locator).to_be_visible(timeout=3000)
+            self._animation_block_visibility = True
+
+            return self._animation_block_visibility
+
+        if not visible:
+            expect(locator).not_to_be_visible(timeout=3000)
+            self._animation_block_visibility = True
+
+            return self._animation_block_visibility
+        else:
+            self._animation_block_visibility = False
+
+            return self._animation_block_visibility
 
     def get_animation_turnover(self):
         """Метод проверяет, что  в анимации при заполнении шкалы происходит переключение на другую кнопку.
