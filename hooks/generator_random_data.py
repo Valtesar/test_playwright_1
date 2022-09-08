@@ -3,8 +3,6 @@ import string
 
 
 class GenerateRandomData:
-    def __init__(self):
-        pass
 
     @classmethod
     def get_random_fio(cls):
@@ -30,10 +28,3 @@ class GenerateRandomData:
 
         return email
 
-
-if __name__ == '__main__':
-    x = GenerateRandomData()
-    print(x.get_random_fio())
-    print(GenerateRandomData.get_random_fio())
-    print(GenerateRandomData.get_random_mobile())
-    print(GenerateRandomData.get_random_email())
