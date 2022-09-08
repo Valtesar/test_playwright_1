@@ -1,4 +1,4 @@
-<h2>A set of simple tests for automated testing</h2>
+<h2>A set of simple tests for automated testing (in developing)</h2>
 
 The project was written using the Python 3.8 programming language, the playwright framework and the pytest test framework.
 
@@ -22,5 +22,3 @@ Before running tests to set up dependencies, use the command:
 <h2>Example</h2>
 
 Example of a successfully completed test.
-
-![alt text](https://github.com/Valtesar/autotests_ui_playwright/blob/develop/images/3passed.JPG?raw=true)
