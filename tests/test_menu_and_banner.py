@@ -9,5 +9,6 @@ class TestMenuAndBanner:
         start_page.reload()
         assert start_page.animation_block.get_animation_status(True)
         assert start_page.animation_block.get_animation_block_text()
+        start_page.close_page()
 
 
