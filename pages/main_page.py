@@ -46,7 +46,9 @@ class AnimationBlock:
 
     def get_animation_status(self):
         """Метод проверяет, что анимация заполнения шкалы в карусели видна на странице"""
+
         self._animation_block_visibility = self.page.locator('//div[@class= "h3L1Y9"]').is_visible()
+
         return self._animation_block_visibility
 
     def get_animation_turnover(self):
@@ -54,9 +56,12 @@ class AnimationBlock:
            Возвращает --> True если кнопка переключилась, --> False если кнопка осталася прежней"""
 
         attribute_before = self.page.locator('//div[@class= "e3L1Y9"]').get_attribute('style')
+
         with self.page.expect_request('https://mc.yandex.ru/watch/**'):
             pass
+
         attribute_after = self.page.locator('//div[@class= "e3L1Y9"]').get_attribute('style')
+
         return attribute_before != attribute_after
 
     def get_animation_block_text(self):
@@ -101,6 +106,7 @@ class BannerBlock:
         elif attribute_hidden == 'true':
             self._banner_block_visibility = False
             return self._banner_block_visibility
+
         else:
             raise Exception('Something wrong with locator or object not located on page!')
 
