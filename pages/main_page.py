@@ -27,13 +27,13 @@ class MainBankPage(WebPage, ABC):
         self.animation_block = AnimationBlock(page)
         self.banner_block = BannerBlock(page)
 
-    def pick_menu_block(self):
+    def pick_middle_menu_block(self):
         """Метод нажимает на случайную кнопку меню"""
 
         self.page.locator(f'//*[contains(@class, "a3sPfj") and @tabindex = {current_index}]').click()
 
-    def get_banner_info(self):
-        pass
+    def pick_upper_menu_block(self, first_button, second_button):
+        """Метод наводит на нужную кнопку меню вверху экрана, и затем нажимает нужную кнопку в выпадающем меню"""
 
 
 class AnimationBlock:
