@@ -35,10 +35,10 @@ class MainBankPage(WebPage, ABC):
     def pick_upper_menu_block(self, first_button=None, second_button=None):
         """Метод наводит на нужную кнопку меню вверху экрана, и затем нажимает нужную кнопку в выпадающем меню"""
 
-        pos = self.page.locator('//a[@class="a2_r6X g2_r6X e2_r6X d1B_-k" and @title = "Карты"]').bounding_box()
+        pos = self.page.locator(f'//a[@class="a2_r6X g2_r6X e2_r6X d1B_-k" and @title = "{first_button}"]')\
+            .bounding_box()
         self.page.mouse.move(pos['x'], pos['y'])
-
-        sleep(5)
+        self.page.locator(f'//a[@class="a2_r6X g2_r6X e2_r6X d1B_-k" and @title= "{second_button}"]').click()
 
 
 class AnimationBlock:
