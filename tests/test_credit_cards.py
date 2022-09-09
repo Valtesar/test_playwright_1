@@ -5,3 +5,4 @@ class TestCreditCardsPage:
         start_page.pick_upper_menu_block('Карты', 'Целый год без %')
         assert cards_page.get_email_validation()
         cards_page.get_100_days_card()
+        cards_page.get_header_of_tab()
