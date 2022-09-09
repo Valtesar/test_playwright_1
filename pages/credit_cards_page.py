@@ -60,8 +60,13 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
 
     def get_header_of_the_tab(self):
         self.new_page = self.page.context.new_page()
-        self.new_page.goto(self.url)
-        sleep(4)
+        self.new_page.goto(self.url, wait_until="commit")
+        titles = []
+        for i in range(5):
+            titles.append(self.page.title())
+            sleep(0.5)
+        print(titles)
+        sleep(40)
 
 
 
