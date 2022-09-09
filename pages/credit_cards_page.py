@@ -30,6 +30,9 @@ class ApplicationFormCard:
 
         self.page.locator('(//div[@class="e1jwl"])[2]').set_checked(checked=True)
 
+    def check_email_validation(self):
+        pass
+
 
 class CreditCardsPage(MainBankPage, WebPage, ABC):
     def __init__(self, page: Page):
@@ -37,11 +40,19 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
         self.url = 'https://alfabank.ru/get-money/credit-cards/'
         self.app_form = ApplicationFormCard(page)
 
+    def get_email_validation(self):
+        self.page.locator('//button[@data-test-id="button" and @text = "Получить карту"]').click()
+        if "#anketa" not in self.page.url:
+            raise Exception('Button of get credit card was not clicked!', self.page.url)
+        return self.app_form.check_email_validation()
+
     def get_100_days_card(self):
         self.page.locator('//button[@data-test-id="button" and @text = "Получить карту"]').click()
 
         if "#anketa" not in self.page.url:
             raise Exception('Button of get credit card was not clicked!', self.page.url)
+
+        self.app_form.check_email_validation()
         self.app_form.fill_in_app_form()
         sleep(4)
 
