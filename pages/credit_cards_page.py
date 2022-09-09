@@ -31,7 +31,15 @@ class ApplicationFormCard:
         self.page.locator('(//div[@class="e1jwl"])[2]').set_checked(checked=True)
 
     def check_email_validation(self):
-        pass
+
+        self.page.locator('//input[@data-test-id= "email-input"]').click()
+        rus_word = 'майл'
+        eng_transform = 'vfqk'
+        self.page.keyboard.insert_text(rus_word)
+        if self.page.locator(f'//input[@data-test-id= "email-input" and @value = "{eng_transform}"]').is_visible():
+            return True
+        else:
+            return False
 
 
 class CreditCardsPage(MainBankPage, WebPage, ABC):
