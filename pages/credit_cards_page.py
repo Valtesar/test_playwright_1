@@ -55,13 +55,9 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
         return self.app_form.check_email_validation()
 
     def get_100_days_card(self):
-        self.page.locator('//button[@data-test-id="button" and @text = "Получить карту"]').click()
-
-        if "#anketa" not in self.page.url:
-            raise Exception('Button of get credit card was not clicked!', self.page.url)
-
-        self.app_form.check_email_validation()
         self.app_form.fill_in_app_form()
+        self.page.locator('//button[@data-test-id="button" and @type="submit"]').click()
+
         sleep(4)
 
 
