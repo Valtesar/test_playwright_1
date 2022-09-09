@@ -16,8 +16,21 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
 
         if "#anketa" not in self.page.url:
             raise Exception('Button of get credit card was not clicked!', self.page.url)
+
         self.page.locator('//input[@data-test-id= "input" and @name="fullName"]').scroll_into_view_if_needed()
-        self.page.locator('//input[@data-test-id= "input" and @name="fullName"]').type("Hello world")
+        self.page.locator('//input[@data-test-id= "input" and @name="fullName"]').click()
+        self.page.keyboard.insert_text(GenerateRandomData.get_random_fio())
+
+        self.page.locator('//input[@data-test-id= "phoneInput"]').click()
+        self.page.locator('//input[@data-test-id= "phoneInput"]').scroll_into_view_if_needed()
+        self.page.keyboard.insert_text(GenerateRandomData.get_random_mobile())
+
+        self.page.locator('//input[@data-test-id= "email-input"]').click()
+        self.page.keyboard.insert_text(GenerateRandomData.get_random_email())
+
+        self.page.locator(f'//button[@data-test-id="sex-{GenerateRandomData.get_random_gender()}"]').click()
+
+        self.page.locator('(//div[@class="e1jwl"])[2]').set_checked(checked=True)
         sleep(4)
 
 
