@@ -7,6 +7,7 @@ from time import sleep
 
 
 class ApplicationFormCard:
+
     def __init__(self, page: Page):
         self.page = page
         self.fio = GenerateRandomData.get_random_fio()
@@ -43,6 +44,7 @@ class ApplicationFormCard:
 
 
 class CreditCardsPage(MainBankPage, WebPage, ABC):
+
     def __init__(self, page: Page):
         super().__init__(page)
         self.url = 'https://alfabank.ru/get-money/credit-cards/'
