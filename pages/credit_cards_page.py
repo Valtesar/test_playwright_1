@@ -58,7 +58,7 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
         self.app_form.fill_in_app_form()
         self.page.locator('//button[@data-test-id="button" and @type="submit"]').click()
 
-    def get_header_of_tab(self):
+    def get_header_of_the_tab(self):
         self.new_page = self.page.context.new_page()
         self.new_page.goto(self.url)
         sleep(4)
