@@ -45,6 +45,7 @@ class MainBankPage(WebPage, ABC):
 
 
 class AnimationBlock:
+
     def __init__(self, page: Page):
         self.page = page
         self._animation_block_visibility = None
@@ -108,6 +109,7 @@ class AnimationBlock:
 
 
 class BannerBlock:
+
     def __init__(self, page: Page):
         self.page = page
         self._banner_block_visibility = None
