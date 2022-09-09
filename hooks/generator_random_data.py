@@ -27,6 +27,3 @@ class GenerateRandomData:
         gender = ''.join(choices('mf'))
         return gender
 
-
-if __name__ == '__main__':
-    print(GenerateRandomData.get_random_gender())
