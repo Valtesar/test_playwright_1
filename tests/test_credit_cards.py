@@ -8,4 +8,4 @@ class TestCreditCardsPage:
         cards_page.get_100_days_card()
         assert cards_page.get_header_of_the_tab()
         assert cards_page.set_passport_values()
-
+        assert cards_page.get_popup_info()
