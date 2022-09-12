@@ -51,24 +51,33 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
         self.app_form = ApplicationFormCard(page)
 
     def get_email_validation(self):
+
         self.page.locator('//button[@data-test-id="button" and @text = "Получить карту"]').click()
         if "#anketa" not in self.page.url:
             raise Exception('Button of get credit card was not clicked!', self.page.url)
         return self.app_form.check_email_validation()
 
     def get_100_days_card(self):
+
         self.app_form.fill_in_app_form()
         self.page.locator('//button[@data-test-id="button" and @type="submit"]').click()
 
     def get_header_of_the_tab(self):
+
         self.new_page = self.page.context.new_page()
         self.new_page.goto(self.url, wait_until="commit")
         titles = []
         for i in range(5):
             titles.append(self.page.title())
             sleep(0.5)
-        print(titles)
-        sleep(40)
+
+        for title in titles:
+            if titles[0] != title:
+                return False
+            else:
+                return True
+        self.new_page.close()
+
 
 
 
