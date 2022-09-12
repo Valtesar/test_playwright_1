@@ -52,6 +52,9 @@ class ApplicationFormCard:
         else:
             return False
 
+    def check_appeal_by_name(self):
+        pass
+
 
 class CreditCardsPage(MainBankPage, WebPage, ABC):
 
@@ -92,6 +95,6 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
 
         self.app_form.fill_in_app_form_passport()
         self.page.reload()
-        sleep(3)
+        return self.page.locator('//div[contains(@class, "modal continue")]').is_visible()
 
 
