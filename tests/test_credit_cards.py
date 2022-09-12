@@ -7,5 +7,5 @@ class TestCreditCardsPage:
         assert cards_page.get_email_validation()
         cards_page.get_100_days_card()
         assert cards_page.get_header_of_the_tab()
-        cards_page.set_passport_values()
+        assert cards_page.set_passport_values()
 
