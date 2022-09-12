@@ -32,5 +32,8 @@ class GenerateRandomData:
         number = randrange(1000, 10_000)
         return str(number)
 
-
+    @classmethod
+    def get_random_passport_number(cls):
+        series = randrange(100_000, 1_000_000)
+        return str(series)
 
