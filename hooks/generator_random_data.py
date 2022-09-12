@@ -12,7 +12,7 @@ class GenerateRandomData:
 
     @classmethod
     def get_random_mobile(cls):
-        mobile = randrange(9_000_000_000, 9_999_999_999)
+        mobile = randrange(9_000_000_000, 10_000_000_000)
         return str(mobile)
 
     @classmethod
@@ -26,4 +26,11 @@ class GenerateRandomData:
     def get_random_gender(cls):
         gender = ''.join(choices('mf'))
         return gender
+
+    @classmethod
+    def get_random_passport_series(cls):
+        number = randrange(1000, 10_000)
+        return str(number)
+
+
 
