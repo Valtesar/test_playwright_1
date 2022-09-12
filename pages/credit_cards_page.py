@@ -109,4 +109,10 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
 
         return self.app_form.check_appeal_by_name()
 
+    def get_fields_from_page(self):
+        self.page.locator('').click()
+        expect(self.page).not_to_contain_text("Серия")
+        expect(self.page).not_to_contain_text("Номер")
+
+
 
