@@ -2,7 +2,7 @@ from abc import ABC
 from pages.web_page import WebPage
 from pages.main_page import MainBankPage
 from playwright.sync_api import Page, expect
-from hooks.generator_random_data import GenerateRandomData
+from hooks.generator_random_data import GenerateRandomData as GRD
 from time import sleep
 
 
@@ -10,10 +10,12 @@ class ApplicationFormCard:
 
     def __init__(self, page: Page):
         self.page = page
-        self.fio = GenerateRandomData.get_random_fio()
-        self.mobile = GenerateRandomData.get_random_mobile()
-        self.email = GenerateRandomData.get_random_email()
-        self.gender = GenerateRandomData.get_random_gender()
+        self.fio = GRD.get_random_fio()
+        self.mobile = GRD.get_random_mobile()
+        self.email = GRD.get_random_email()
+        self.gender = GRD.get_random_gender()
+        self.passport_series = GRD.get_random_passport_series()
+        self.passport_number = GRD.get_random_passport_number()
 
     def fill_in_app_form(self):
         self.page.locator('//input[@data-test-id= "input" and @name="fullName"]').scroll_into_view_if_needed()
@@ -30,6 +32,14 @@ class ApplicationFormCard:
         self.page.locator(f'//button[@data-test-id="sex-{self.gender}"]').click()
 
         self.page.locator('(//div[@class="e1jwl"])[2]').set_checked(checked=True)
+
+    def fill_in_app_form_passport(self):
+
+        self.page.locator('//input[@class ="input__control" and @name="passportSeries"]').click()
+        self.page.keyboard.insert_text(self.passport_series)
+
+        self.page.locator('//input[@class ="input__control" and @name="passportNumber"]').click()
+        self.page.keyboard.insert_text(self.passport_number)
 
     def check_email_validation(self):
 
@@ -75,11 +85,13 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
             if titles[0] != title:
                 return False
             else:
+                self.new_page.close()
                 return True
-        self.new_page.close()
 
+    def set_passport_values(self):
 
-
-
+        self.app_form.fill_in_app_form_passport()
+        self.page.reload()
+        sleep(3)
 
 
