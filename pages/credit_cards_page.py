@@ -77,8 +77,8 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
 
     def get_header_of_the_tab(self):
 
-        self.new_page = self.page.context.new_page()
-        self.new_page.goto(self.url, wait_until="commit")
+        new_page = self.page.context.new_page()
+        new_page.goto(self.url, wait_until="commit")
         titles = []
         for i in range(5):
             titles.append(self.page.title())
@@ -88,7 +88,7 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
             if titles[0] != title:
                 return False
             else:
-                self.new_page.close()
+                new_page.close()
                 return True
 
     def set_passport_values(self):
