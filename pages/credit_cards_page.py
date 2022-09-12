@@ -7,6 +7,8 @@ from time import sleep
 
 
 class ApplicationFormCard:
+    en = "qwertyuiop[]asdfghjkl;'zxcvbnm,."
+    rus = "йцукенгшщзхъфывапролджэячсмитьбю"
 
     def __init__(self, page: Page):
         self.page = page
@@ -53,7 +55,13 @@ class ApplicationFormCard:
             return False
 
     def check_appeal_by_name(self):
-        pass
+        message = ''.join(self.page.locator('//p[contains(@class, "paragraph continue")]').all_text_contents())
+        fio_ru = self.fio.translate(str.maketrans(ApplicationFormCard.en, ApplicationFormCard.rus))
+        name_patronymic_ru = ' '.join(fio_ru.title().split()[1:])
+        if name_patronymic_ru in message:
+            return True
+        else:
+            return False
 
 
 class CreditCardsPage(MainBankPage, WebPage, ABC):
@@ -96,5 +104,9 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
         self.app_form.fill_in_app_form_passport()
         self.page.reload()
         return self.page.locator('//div[contains(@class, "modal continue")]').is_visible()
+
+    def get_popup_info(self):
+
+        return self.app_form.check_appeal_by_name()
 
 
