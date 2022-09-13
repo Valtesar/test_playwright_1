@@ -127,6 +127,8 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
         return self.app_form.check_appeal_by_name()
 
     def get_fields_from_page(self):
+        """Метож нажимает на кнопку заполнения анкеты с начала, и проверяет, что бы на странице отсутствовали поля
+           серии и номера паспорта"""
 
         self.page.locator('(//span[@class="link__text"])[3]').click()
         expect(self.page.locator('//input[@class="input__control" and @name="passportSeries"]')).not_to_be_visible()
