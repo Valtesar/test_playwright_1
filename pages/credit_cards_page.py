@@ -82,6 +82,7 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
         self.app_form = ApplicationFormCard(page)
 
     def get_email_validation(self):
+        """Метод нажимает на кнопку <Получить карту> и проверяет, что url изменился"""
 
         self.page.locator('//button[@data-test-id="button" and @text = "Получить карту"]').click()
         if "#anketa" not in self.page.url:
