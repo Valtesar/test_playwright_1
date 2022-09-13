@@ -49,6 +49,8 @@ class ApplicationFormCard:
         self.page.keyboard.insert_text(self.passport_number)
 
     def check_email_validation(self):
+        """"Метож проверки поля email на валидацию в виде ввода русских букв и сраненнием текста в текстбоксе
+            с корректным преводом на английские символы"""
 
         self.page.locator('//input[@data-test-id= "email-input"]').click()
         rus_word = 'майл'
