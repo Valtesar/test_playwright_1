@@ -22,6 +22,8 @@ class ApplicationFormCard:
         self.passport_number = GRD.get_random_passport_number()
 
     def fill_in_app_form(self):
+        """Метод класса для заполнения полей анкеты случайными данными сгенерированными в инициализаторе класса"""
+
         self.page.locator('//input[@data-test-id= "input" and @name="fullName"]').scroll_into_view_if_needed()
         self.page.locator('//input[@data-test-id= "input" and @name="fullName"]').click()
         self.page.keyboard.insert_text(self.fio)
