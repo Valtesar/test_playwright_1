@@ -2,21 +2,6 @@ from abc import ABC
 from pages.web_page import WebPage
 from playwright.sync_api import Page, expect
 from random import randrange
-import pytest
-from time import sleep
-
-index = randrange(4)
-current_index = index
-
-
-class RandomIndexGenerator:
-    def __init__(self):
-        self.index = self.generate_random_index(4)
-
-    @staticmethod
-    def generate_random_index(index_range):
-        index = randrange(index_range)
-        return index
 
 
 class MainBankPage(WebPage, ABC):
@@ -31,7 +16,7 @@ class MainBankPage(WebPage, ABC):
     def pick_middle_menu_block(self):
         """Метод нажимает на случайную кнопку меню"""
 
-        self.page.locator(f'//*[contains(@class, "a3sPfj") and @tabindex = {current_index}]').click()
+        self.page.locator(f'//*[contains(@class, "a3sPfj") and @tabindex = {self.banner_block.current_index}]').click()
 
     def pick_upper_menu_block(self, first_button=None, second_button=None):
         """Метод наводит на нужную кнопку меню вверху экрана, и затем нажимает нужную кнопку в выпадающем меню"""
@@ -112,6 +97,8 @@ class AnimationBlock:
 
 class BannerBlock:
     """Класс для работы с экземплярами раздела баннеров"""
+    index = randrange(4)
+    current_index = index
 
     def __init__(self, page: Page):
         self.page = page
@@ -123,7 +110,7 @@ class BannerBlock:
     def get_banner_status(self):
         """Метод проверяет, что текущий баннер связанный с индексом кнопки отображается корректно"""
 
-        attribute_hidden = self.page.locator(f'(//div[contains(@class, "c2XhKl b2XhKl")][{current_index + 1}])')\
+        attribute_hidden = self.page.locator(f'(//div[contains(@class, "c2XhKl b2XhKl")][{self.current_index + 1}])')\
             .get_attribute('aria-hidden')
 
         if attribute_hidden == 'false':
