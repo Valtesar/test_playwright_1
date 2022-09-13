@@ -97,6 +97,7 @@ class AnimationBlock:
 
 class BannerBlock:
     """Класс для работы с экземплярами раздела баннеров"""
+
     index = randrange(4)
     current_index = index
 
