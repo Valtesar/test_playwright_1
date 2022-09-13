@@ -114,12 +114,15 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
                 return True
 
     def set_passport_values(self):
+        """Метод вызывает функцию заполнения паспортным данных, затем обновляет страницу и проверяет,
+           что поп-ап отображается"""
 
         self.app_form.fill_in_app_form_passport()
         self.page.reload()
         return self.page.locator('//div[contains(@class, "modal continue")]').is_visible()
 
     def get_popup_info(self):
+        """Метод вызывает функцию проверки обращения по имени отчеству в поп-апе"""
 
         return self.app_form.check_appeal_by_name()
 
