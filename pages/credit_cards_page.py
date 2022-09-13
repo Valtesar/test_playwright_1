@@ -110,9 +110,12 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
         return self.app_form.check_appeal_by_name()
 
     def get_fields_from_page(self):
-        self.page.locator('').click()
-        expect(self.page).not_to_contain_text("Серия")
-        expect(self.page).not_to_contain_text("Номер")
 
+        self.page.locator('(//span[@class="link__text"])[3]').click()
+        expect(self.page.locator('//input[@class="input__control" and @name="passportSeries"]')).not_to_be_visible()
+        expect(self.page.locator('//input[@class="input__control" and @name="passportNumber"]')).not_to_be_visible()
+        self.page.close()
+
+        return True
 
 
