@@ -74,6 +74,7 @@ class ApplicationFormCard:
 
 
 class CreditCardsPage(MainBankPage, WebPage, ABC):
+    """Класс реализации объекта страницы кредитных карт сайта"""
 
     def __init__(self, page: Page):
         super().__init__(page)
