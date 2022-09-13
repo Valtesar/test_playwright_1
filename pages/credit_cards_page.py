@@ -62,6 +62,8 @@ class ApplicationFormCard:
             return False
 
     def check_appeal_by_name(self):
+        """Метод проверки поп-апа с обращением к клиенту по имени отчеству на наличие корректного обращения"""
+
         message = ''.join(self.page.locator('//p[contains(@class, "paragraph continue")]').all_text_contents())
         fio_ru = self.fio.translate(str.maketrans(ApplicationFormCard.EN, ApplicationFormCard.RUS))
         name_patronymic_ru = ' '.join(fio_ru.title().split()[1:])
