@@ -20,6 +20,7 @@ class RandomIndexGenerator:
 
 
 class MainBankPage(WebPage, ABC):
+    """Класс для работы с главной страницей банка и его экземплярами"""
 
     def __init__(self, page: Page):
         super().__init__(page)
@@ -45,6 +46,7 @@ class MainBankPage(WebPage, ABC):
 
 
 class AnimationBlock:
+    """Класс для работы с экземплярами раздела блока анимации (блок кнопок)"""
 
     def __init__(self, page: Page):
         self.page = page
@@ -109,6 +111,7 @@ class AnimationBlock:
 
 
 class BannerBlock:
+    """Класс для работы с экземплярами раздела баннеров"""
 
     def __init__(self, page: Page):
         self.page = page
