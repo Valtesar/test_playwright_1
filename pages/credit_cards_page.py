@@ -90,6 +90,7 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
         return self.app_form.check_email_validation()
 
     def get_100_days_card(self):
+        """Метож вызывает функцию заполнения формы получения карты и нажимает на кнопку продолжить."""
 
         self.app_form.fill_in_app_form()
         self.page.locator('//button[@data-test-id="button" and @type="submit"]').click()
