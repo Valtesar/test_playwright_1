@@ -1,6 +1,7 @@
 
 
 class TestCreditCardsPage:
+    """Класс тестов для проверки кредитных карт и их заказа"""
 
     def test_credit_card_order(self, start_page, cards_page):
         start_page.pick_upper_menu_block('Карты', 'Целый год без %')
