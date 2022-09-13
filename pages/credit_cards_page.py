@@ -40,6 +40,7 @@ class ApplicationFormCard:
         self.page.locator('(//div[@class="e1jwl"])[2]').set_checked(checked=True)
 
     def fill_in_app_form_passport(self):
+        """Метод заполнения полей анкеты с паспортными данными сгенерированными в инициализаторе класса"""
 
         self.page.locator('//input[@class ="input__control" and @name="passportSeries"]').click()
         self.page.keyboard.insert_text(self.passport_series)
