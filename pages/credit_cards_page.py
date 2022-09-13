@@ -96,6 +96,8 @@ class CreditCardsPage(MainBankPage, WebPage, ABC):
         self.page.locator('//button[@data-test-id="button" and @type="submit"]').click()
 
     def get_header_of_the_tab(self):
+        """Метод открывает новую вкладку и собирает названия заголовков предыдущей вкладки с интервалом в 0.5 секунд,
+            формирует спиисок из заголовков. Проверяет, что бы все заголовки в списке были одинаковые."""
 
         new_page = self.page.context.new_page()
         new_page.goto(self.url, wait_until="commit")
