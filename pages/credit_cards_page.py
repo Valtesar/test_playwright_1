@@ -7,8 +7,10 @@ from time import sleep
 
 
 class ApplicationFormCard:
-    en = "qwertyuiop[]asdfghjkl;'zxcvbnm,."
-    rus = "йцукенгшщзхъфывапролджэячсмитьбю"
+    """Класс реализации объекта анкеты заявки на кредитную карту."""
+
+    EN = "qwertyuiop[]asdfghjkl;'zxcvbnm,."
+    RUS = "йцукенгшщзхъфывапролджэячсмитьбю"
 
     def __init__(self, page: Page):
         self.page = page
@@ -56,7 +58,7 @@ class ApplicationFormCard:
 
     def check_appeal_by_name(self):
         message = ''.join(self.page.locator('//p[contains(@class, "paragraph continue")]').all_text_contents())
-        fio_ru = self.fio.translate(str.maketrans(ApplicationFormCard.en, ApplicationFormCard.rus))
+        fio_ru = self.fio.translate(str.maketrans(ApplicationFormCard.EN, ApplicationFormCard.RUS))
         name_patronymic_ru = ' '.join(fio_ru.title().split()[1:])
         if name_patronymic_ru in message:
             return True
