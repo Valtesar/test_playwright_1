@@ -34,7 +34,7 @@ class AnimationBlockSmallBusiness:
                 else:
                     elapsed_time = time.process_time() - n
                     times.append(elapsed_time)
-        print(times)
+        print('Animation change time on the small business main page:', times)
         diff = np.diff(times)
         for t in diff:
             if t >= 1:
