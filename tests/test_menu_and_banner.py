@@ -11,4 +11,7 @@ class TestMenuAndBanner:
         assert start_page.animation_block.get_animation_block_text()
         start_page.close_page()
 
+    def test_banners_time(self, start_page):
+        start_page.animation_block.get_animation_visible_time()
+
 
