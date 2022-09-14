@@ -12,8 +12,8 @@ class MainBankPage(WebPage, ABC):
     def __init__(self, page: Page):
         super().__init__(page)
         self.url = 'https://alfabank.ru/'
-        self.animation_block = AnimationBlock(page)
-        self.banner_block = BannerBlock(page)
+        self.animation_block = AnimationBlockMain(page)
+        self.banner_block = BannerBlockMain(page)
 
     def pick_middle_menu_block(self):
         """Метод нажимает на случайную кнопку меню"""
@@ -38,7 +38,7 @@ class MainBankPage(WebPage, ABC):
             raise Exception('Missing name of button!')
 
 
-class AnimationBlock:
+class AnimationBlockMain:
     """Класс для работы с экземплярами раздела блока анимации (блок кнопок)"""
 
     def __init__(self, page: Page):
@@ -130,7 +130,7 @@ class AnimationBlock:
         return True
 
 
-class BannerBlock:
+class BannerBlockMain:
     """Класс для работы с экземплярами раздела баннеров"""
 
     index = randrange(4)
