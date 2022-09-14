@@ -12,6 +12,6 @@ class TestMenuAndBanner:
         start_page.close_page()
 
     def test_banners_time(self, start_page):
-        assert start_page.animation_block.get_animation_visible_time()
-
+        # assert start_page.animation_block.get_animation_visible_time()
+        start_page.pick_top_menu_block('Малому бизнесу и ИП')
 
