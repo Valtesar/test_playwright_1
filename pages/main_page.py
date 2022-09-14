@@ -2,8 +2,8 @@ from abc import ABC
 from pages.web_page import WebPage
 from playwright.sync_api import Page, expect
 from random import randrange
-from hooks.time_it import time_it
 import time
+import numpy as np
 
 
 class MainBankPage(WebPage, ABC):
@@ -111,7 +111,11 @@ class AnimationBlock:
                     elapsed_time = time.process_time() - n
                     times.append(elapsed_time)
         print(times)
-
+        diff = np.diff(times)
+        for t in diff:
+            if t >= 1:
+                return False
+        return True
 
 
 class BannerBlock:
