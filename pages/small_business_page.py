@@ -10,4 +10,6 @@ class MainSmallBusinessPage:
         self.animation_block_sb = AnimationBlockSmallBusiness(page)
 
 
-
+class AnimationBlockSmallBusiness:
+    def __init__(self, page: Page):
+        self.page = page
