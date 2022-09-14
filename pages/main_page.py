@@ -2,6 +2,8 @@ from abc import ABC
 from pages.web_page import WebPage
 from playwright.sync_api import Page, expect
 from random import randrange
+from hooks.time_it import time_it
+import time
 
 
 class MainBankPage(WebPage, ABC):
@@ -93,6 +95,20 @@ class AnimationBlock:
             return True
         else:
             return False
+
+    def get_animation_visible_time(self, count):
+        blocks = [1, 2, 3, 0]
+
+        def get_time(cnt):
+            for i in range(cnt):
+                while self.page.locator(f'//div[contains(@class, "i3sPfj") and @tabindex="{i}"]').is_visible():
+                    continue
+
+        for j in range(count):
+            while not self.page.locator(f'//div[contains(@class, "i3sPfj") and @tabindex="{j}"]').is_visible():
+                continue
+            else:
+                print(time_it(get_time(count)))
 
 
 class BannerBlock:
