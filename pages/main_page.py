@@ -32,6 +32,8 @@ class MainBankPage(WebPage, ABC):
             raise Exception('Missing name of the button!')
 
     def pick_top_menu_block(self, button=None):
+        """Метод нажимает на нужную кнопку в самом верхнем меню страницы"""
+
         if button is not None:
             self.page.locator(f'//a[contains(@class, "a2_r6X g2_r6X") and @title="{button}"]').click()
         else:
