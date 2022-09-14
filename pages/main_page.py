@@ -31,6 +31,12 @@ class MainBankPage(WebPage, ABC):
         else:
             raise Exception('Missing name of the button!')
 
+    def pick_top_menu_block(self, button=None):
+        if button is not None:
+            self.page.locator(f'//a[contains(@class, "a2_r6X g2_r6X") and @title="{button}"]').click()
+        else:
+            raise Exception('Missing name of button!')
+
 
 class AnimationBlock:
     """Класс для работы с экземплярами раздела блока анимации (блок кнопок)"""
