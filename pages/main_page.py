@@ -97,8 +97,14 @@ class AnimationBlock:
             return False
 
     def get_animation_visible_time(self):
+        """Метод измеряет время отображения анимации на каждом блоке и в случае расхождения времени возвращает -> False,
+           если время примерно равно, то возвращает -> True."""
+
         blocks = [1, 2, 3, 0]
         times = []
+
+        if not self.page.locator('//div[contains(@class, "i3sPfj")]').is_visible():
+            return False
 
         for i in blocks:
             while not self.page.locator(f'//div[contains(@class, "i3sPfj") and @tabindex="{i}"]').is_visible():
