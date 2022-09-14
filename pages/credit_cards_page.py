@@ -73,7 +73,7 @@ class ApplicationFormCard:
             return False
 
 
-class CreditCardsPage(MainBankPage, WebPage, ABC):
+class MainCreditCardsPage(MainBankPage, WebPage, ABC):
     """Класс реализации объекта страницы кредитных карт сайта"""
 
     def __init__(self, page: Page):
