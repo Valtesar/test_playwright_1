@@ -1,3 +1,4 @@
+from time import sleep
 
 
 class TestMenuAndBanner:
@@ -11,7 +12,10 @@ class TestMenuAndBanner:
         assert start_page.animation_block.get_animation_block_text()
         start_page.close_page()
 
-    def test_banners_time(self, start_page):
+    def test_banners_time(self, start_page, small_business_page):
         # assert start_page.animation_block.get_animation_visible_time()
         start_page.pick_top_menu_block('Малому бизнесу и ИП')
+        sleep(3)
+        assert small_business_page.animation_block_sb.get_animation_visible_time_sb()
+
 
