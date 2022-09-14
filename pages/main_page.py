@@ -96,19 +96,22 @@ class AnimationBlock:
         else:
             return False
 
-    def get_animation_visible_time(self, count):
+    def get_animation_visible_time(self):
         blocks = [1, 2, 3, 0]
+        times = []
 
-        def get_time(cnt):
-            for i in range(cnt):
-                while self.page.locator(f'//div[contains(@class, "i3sPfj") and @tabindex="{i}"]').is_visible():
-                    continue
-
-        for j in range(count):
-            while not self.page.locator(f'//div[contains(@class, "i3sPfj") and @tabindex="{j}"]').is_visible():
-                continue
+        for i in blocks:
+            while not self.page.locator(f'//div[contains(@class, "i3sPfj") and @tabindex="{i}"]').is_visible():
+                pass
             else:
-                print(time_it(get_time(count)))
+                n = time.process_time()
+                while self.page.locator(f'//div[contains(@class, "i3sPfj") and @tabindex="{i}"]').is_visible():
+                    pass
+                else:
+                    elapsed_time = time.process_time() - n
+                    times.append(elapsed_time)
+        print(times)
+
 
 
 class BannerBlock:
