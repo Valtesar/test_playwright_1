@@ -4,6 +4,8 @@ from abc import abstractmethod
 
 
 class WebPage(object):
+    """Класс для работы с объектами веб страниц."""
+
     def __init__(self, page: Page, height: int = 1600, width: int = 900):
         self.page = page
         self.height = height
