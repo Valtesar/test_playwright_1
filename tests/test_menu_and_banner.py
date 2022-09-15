@@ -2,6 +2,8 @@ from time import sleep
 
 
 class TestMenuAndBanner:
+    """Класс тестов для проверки коррктности отображения блоков меню и баннеров"""
+
     def test_menu_and_banner(self, start_page):
         assert start_page.animation_block.get_animation_turnover()
         start_page.pick_middle_menu_block()
