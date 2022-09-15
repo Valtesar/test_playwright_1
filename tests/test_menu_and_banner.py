@@ -5,6 +5,10 @@ class TestMenuAndBanner:
     """Класс тестов для проверки коррктности отображения блоков меню и баннеров"""
 
     def test_menu_and_banner(self, start_page):
+        """Тест меню и баннеров на главной странице сайта.
+           Проверяет, наличие анимации на блоках кнопок, а так же ее остановка при нажатии. При обновлении анимация
+           вновь должна появлятся.
+           """
         assert start_page.animation_block.get_animation_turnover()
         start_page.pick_middle_menu_block()
         assert start_page.animation_block.get_animation_status(False)
