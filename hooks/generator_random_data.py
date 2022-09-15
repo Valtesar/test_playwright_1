@@ -44,6 +44,11 @@ class GenerateRandomData:
 
     @classmethod
     def get_random_gender(cls):
+        """Метод генерирует случайный пол человека.
+
+        Пол выбирается случайным образом из мужского и женского.
+        Метод возвращает пол типа -> str, в формате <пол>"""
+
         gender = ''.join(choices('mf'))
         return gender
 
