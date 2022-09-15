@@ -19,6 +19,10 @@ class TestMenuAndBanner:
         start_page.close_page()
 
     def test_banners_time(self, start_page, small_business_page):
+        """Тест для проверки времени работы анимации на двух страницах: главной и странице <Малому бизнесу и ИП>.
+           Сравнение времени анимации на двух страницах. В случае большой разницы в анимации между блоками
+           тест вернет ошибку."""
+
         # assert start_page.animation_block.get_animation_visible_time()
         start_page.pick_top_menu_block('Малому бизнесу и ИП')
         sleep(3)
