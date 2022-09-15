@@ -3,6 +3,8 @@ import string
 
 
 class GenerateRandomData:
+    """Класс для генерации рандомных данных используя методы класса, для обращения к ним,
+       без создания экземпляров класса"""
 
     @classmethod
     def get_random_fio(cls):
