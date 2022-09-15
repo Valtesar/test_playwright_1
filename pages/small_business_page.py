@@ -4,6 +4,7 @@ import numpy as np
 
 
 class MainSmallBusinessPage:
+    """Класс для работы со страницей <малого бизнеса и ИП> и его экземплярами"""
 
     def __init__(self, page: Page):
         self.page = page
@@ -11,6 +12,7 @@ class MainSmallBusinessPage:
 
 
 class AnimationBlockSmallBusiness:
+
     def __init__(self, page: Page):
         self.page = page
 
