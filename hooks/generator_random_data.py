@@ -26,6 +26,7 @@ class GenerateRandomData:
         Метод возвращает номер телефона типа -> str, в формате <9999999999>"""
 
         mobile = randrange(9_000_000_000, 10_000_000_000)
+
         return str(mobile)
 
     @classmethod
