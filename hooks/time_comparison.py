@@ -1,4 +1,5 @@
 class TimeComparison:
+    """Класс для работы с объектами времени работы анимации на страницах сайта"""
 
     def __init__(self, val1, val2):
         self._val1 = val1
