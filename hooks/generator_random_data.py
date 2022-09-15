@@ -50,6 +50,7 @@ class GenerateRandomData:
         Метод возвращает пол типа -> str, в формате <пол>"""
 
         gender = ''.join(choices('mf'))
+
         return gender
 
     @classmethod
