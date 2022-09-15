@@ -66,6 +66,11 @@ class GenerateRandomData:
 
     @classmethod
     def get_random_passport_number(cls):
+        """Метод генерирует случайный номер паспорта.
+
+        Значение номера паспорта выбирается из указанного диапазона чисел.
+        Метод возвращает номер паспорта типа -> str, в формате <999999>"""
+
         series = randrange(100_000, 1_000_000)
         return str(series)
 
