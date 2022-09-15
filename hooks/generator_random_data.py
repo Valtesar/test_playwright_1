@@ -72,5 +72,6 @@ class GenerateRandomData:
         Метод возвращает номер паспорта типа -> str, в формате <999999>"""
 
         series = randrange(100_000, 1_000_000)
+
         return str(series)
 
