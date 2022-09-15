@@ -61,6 +61,7 @@ class GenerateRandomData:
         Метод возвращает серию паспорта типа -> str, в формате <9999>"""
 
         number = randrange(1000, 10_000)
+
         return str(number)
 
     @classmethod
