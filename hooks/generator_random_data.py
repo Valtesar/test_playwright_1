@@ -31,6 +31,11 @@ class GenerateRandomData:
 
     @classmethod
     def get_random_email(cls):
+        """Метод генерирует случайный адрес электронной почты.
+
+        Имя и домен электронной почты генерируются из случайных букв с указанной длинной.
+        Метод возвращает адрес электронной почты типа -> str, в формате <name@domain.com>"""
+
         def rand_text():
             return ''.join(choices(string.ascii_lowercase, k=randrange(4, 7)))
         email = "{}@{}.{}".format(rand_text(), rand_text(), 'com')
