@@ -7,11 +7,14 @@ class MainSmallBusinessPage:
     """Класс для работы со страницей <малого бизнеса и ИП> и его экземплярами"""
 
     def __init__(self, page: Page):
+        """Инициализируем свойства объекта из полученного атрибута page, и объекта класса блока анимации"""
+
         self.page = page
         self.animation_block_sb = AnimationBlockSmallBusiness(page)
 
 
 class AnimationBlockSmallBusiness:
+    """Класс для работы с блоком анимации на странице <малого бизнеса и ИП> и его экземплярами"""
 
     def __init__(self, page: Page):
         self.page = page
