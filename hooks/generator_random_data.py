@@ -39,6 +39,7 @@ class GenerateRandomData:
         def rand_text():
             return ''.join(choices(string.ascii_lowercase, k=randrange(4, 7)))
         email = "{}@{}.{}".format(rand_text(), rand_text(), 'com')
+
         return email
 
     @classmethod
