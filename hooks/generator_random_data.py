@@ -15,6 +15,7 @@ class GenerateRandomData:
 
         fio_list = [''.join(choices(string.ascii_lowercase, k=randrange(4, 7))) for _ in range(3)]
         fio_string = ' '.join(fio_list)
+
         return fio_string
 
     @classmethod
