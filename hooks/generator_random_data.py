@@ -8,6 +8,11 @@ class GenerateRandomData:
 
     @classmethod
     def get_random_fio(cls):
+        """Метод генерирует случайную фамилию, имя и отчество.
+
+        Длина фамилии, имени и отчества выбирается случайного размера в указанном диапазоне.
+        Метод возвращает фамилию, имя и отчество типа -> str, в формате: <Фамилия Имя Отчество>"""
+
         fio_list = [''.join(choices(string.ascii_lowercase, k=randrange(4, 7))) for _ in range(3)]
         fio_string = ' '.join(fio_list)
         return fio_string
