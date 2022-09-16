@@ -1,3 +1,4 @@
+from hooks.time_comparison import TimeComparison
 from time import sleep
 
 
@@ -23,9 +24,10 @@ class TestMenuAndBanner:
            Сравнение времени анимации на двух страницах. В случае большой разницы в анимации между блоками
            тест вернет ошибку."""
 
-        # assert start_page.animation_block.get_animation_visible_time()
+        assert start_page.animation_block.get_animation_visible_time()
         start_page.pick_top_menu_block('Малому бизнесу и ИП')
         sleep(3)
         assert small_business_page.animation_block_sb.get_animation_visible_time_sb()
+        TimeComparison.output_time_comparison()
 
 
