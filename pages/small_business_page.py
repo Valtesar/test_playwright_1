@@ -15,6 +15,7 @@ class MainSmallBusinessPage:
 
 class AnimationBlockSmallBusiness:
     """Класс для работы с блоком анимации на странице <малого бизнеса и ИП> и его экземплярами"""
+    animation_block_time = []
 
     def __init__(self, page: Page):
         self.page = page
@@ -40,8 +41,14 @@ class AnimationBlockSmallBusiness:
                     elapsed_time = time.process_time() - n
                     times.append(elapsed_time)
         print('Animation change time on the small business main page:', times)
+
+        AnimationBlockSmallBusiness.animation_block_time = times
         diff = np.diff(times)
         for t in diff:
             if t >= 1:
                 return False
         return True
+
+    @property
+    def animation_time(self):
+        return AnimationBlockSmallBusiness.animation_block_time
