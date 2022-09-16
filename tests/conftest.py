@@ -2,7 +2,7 @@ from playwright.sync_api import Page
 import pytest
 from pages.main_page import MainBankPage
 from pages.credit_cards_page import MainCreditCardsPage
-from pages.small_business_page import MainSmallBusinessPage
+from pages.small_business_page import MainSmallBusinessPage, AnimationBlockSmallBusiness
 
 
 @pytest.fixture()
@@ -22,5 +22,7 @@ def cards_page(page: Page):
 def small_business_page(page: Page):
     sb_page = MainSmallBusinessPage(page)
     return sb_page
+
+
 
 
