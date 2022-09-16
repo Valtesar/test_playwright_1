@@ -15,10 +15,10 @@ class MainSmallBusinessPage:
 
 class AnimationBlockSmallBusiness:
     """Класс для работы с блоком анимации на странице <малого бизнеса и ИП> и его экземплярами"""
-    animation_block_time = []
 
     def __init__(self, page: Page):
         self.page = page
+        self._animation_block_time = []
 
     def get_animation_visible_time_sb(self):
         """Метод измеряет время отображения анимации на каждом блоке и в случае расхождения времени возвращает -> False,
@@ -42,7 +42,7 @@ class AnimationBlockSmallBusiness:
                     times.append(elapsed_time)
         print('Animation change time on the small business main page:', times)
 
-        AnimationBlockSmallBusiness.animation_block_time = times
+        self._animation_block_time = times
         diff = np.diff(times)
         for t in diff:
             if t >= 1:
@@ -51,4 +51,4 @@ class AnimationBlockSmallBusiness:
 
     @property
     def animation_time(self):
-        return AnimationBlockSmallBusiness.animation_block_time
+        return self._animation_block_time
