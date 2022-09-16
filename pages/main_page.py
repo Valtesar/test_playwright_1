@@ -43,6 +43,8 @@ class MainBankPage(WebPage, ABC):
 class AnimationBlockMain:
     """Класс для работы с экземплярами раздела блока анимации (блок кнопок)"""
 
+    animation_block_time = []
+
     def __init__(self, page: Page):
         self.page = page
         self._animation_block_visibility = None
@@ -125,11 +127,16 @@ class AnimationBlockMain:
                     elapsed_time = time.process_time() - n
                     times.append(elapsed_time)
         print('Animation change time on the main page:', times)
+        AnimationBlockMain.animation_block_time = times
         diff = np.diff(times)
         for t in diff:
             if t >= 1:
                 return False
         return True
+
+    @property
+    def animation_time(self):
+        return AnimationBlockMain.animation_block_time
 
 
 class BannerBlockMain:
