@@ -127,7 +127,9 @@ class AnimationBlockMain:
                     elapsed_time = time.process_time() - n
                     times.append(elapsed_time)
         print('Animation change time on the main page:', times)
-        AnimationBlockMain.animation_block_time = times
+
+        AnimationBlockMain.animation_block_time = sum(times)
+
         diff = np.diff(times)
         for t in diff:
             if t >= 1:
