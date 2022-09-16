@@ -28,6 +28,8 @@ class TestMenuAndBanner:
         start_page.pick_top_menu_block('Малому бизнесу и ИП')
         sleep(3)
         assert small_business_page.animation_block_sb.get_animation_visible_time_sb()
-        TimeComparison.output_time_comparison()
+        TimeComparison.output_time_comparison(start_page.animation_block.animation_time,
+                                              small_business_page.animation_block_sb.animation_time)
+        small_business_page.page.close()
 
 
