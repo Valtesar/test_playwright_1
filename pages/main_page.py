@@ -15,6 +15,13 @@ class MainBankPage(WebPage, ABC):
         self.animation_block = AnimationBlockMain(page)
         self.banner_block = BannerBlockMain(page)
 
+    def pick_lower_menu_block(self, button=None):
+
+        if button is not None:
+            self.page.locator(f'//a[contains(@class, "a2jrkg o2jrkg") and @title="{button}"]').click()
+        else:
+            raise Exception('Missing name of button!')
+
     def pick_middle_menu_block(self):
         """Метод нажимает на случайную кнопку меню"""
 
