@@ -51,4 +51,6 @@ class AnimationBlockSmallBusiness:
 
     @property
     def animation_time(self):
+        """Метод получения значения времени анимаци экземпляра класса."""
+
         return self._animation_block_time
