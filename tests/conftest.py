@@ -3,6 +3,7 @@ import pytest
 from pages.main_page import MainBankPage
 from pages.credit_cards_page import MainCreditCardsPage
 from pages.small_business_page import MainSmallBusinessPage
+from pages.docs_page import DocsPage
 
 
 @pytest.fixture()
@@ -22,6 +23,12 @@ def cards_page(page: Page):
 def small_business_page(page: Page):
     sb_page = MainSmallBusinessPage(page)
     return sb_page
+
+
+@pytest.fixture()
+def docs_and_tariffs_page(page: Page):
+    dtf_page = DocsPage(page)
+    return dtf_page
 
 
 
