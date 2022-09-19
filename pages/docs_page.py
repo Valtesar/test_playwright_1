@@ -17,4 +17,5 @@ class DocsPage:
         """Выбирает самый большой файл из списка"""
         pass
 
-
+    def try_download_file(self):
+        pass
