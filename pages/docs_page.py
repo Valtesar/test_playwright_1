@@ -18,4 +18,5 @@ class DocsPage:
         pass
 
     def try_download_file(self):
+        """Метод скачивает файл со страницы"""
         pass
