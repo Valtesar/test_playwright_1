@@ -7,7 +7,9 @@ class DocsPage:
 
     def get_active_button(self):
         """Возвращает название текущей нажатой кнопки"""
-        pass
+        expect(self.page.locator('//p[contains(@class, "d28gXp g28gXp")]'))\
+            .to_be_visible()
+        return ''.join(self.page.locator('//p[contains(@class, "d28gXp g28gXp")]').all_text_contents())
 
     def get_files_sizes(self):
         """Метод собирает значения размера файлов на странице в список"""
