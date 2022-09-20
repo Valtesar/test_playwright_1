@@ -18,7 +18,8 @@ class DocsPage:
         return ''.join(self.page.locator('//p[contains(@class, "d28gXp g28gXp")]').all_text_contents())
 
     def get_files_sizes(self):
-        """Метод собирает размеры файлов на странице, а затем преобразовывает их в список с числовыми значениями"""
+        """Метод собирает названия и размеры файлов на странице,
+         соединяет их в словарь в случае одинакового кол-ва пар"""
 
         self.file_sizes = self.page.locator('//p[@class="aqMVUC bqMVUC hqMVUC DqMVUC cqMVUC eG2mwi RG2mwi"]')\
             .all_text_contents()
