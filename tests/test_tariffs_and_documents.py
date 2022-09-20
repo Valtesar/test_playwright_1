@@ -8,4 +8,5 @@ class TestTariffsAndDocuments:
         assert docs_and_tariffs_page.get_active_button() == "Комплексное банковское обслуживание"
         sleep(2)
         docs_and_tariffs_page.get_files_sizes()
+        docs_and_tariffs_page.pick_the_biggest_file()
         pass
