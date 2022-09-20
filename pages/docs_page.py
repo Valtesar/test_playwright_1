@@ -6,7 +6,9 @@ class DocsPage:
         self.page = page
 
     def get_active_button(self):
-        """Возвращает название текущей нажатой кнопки"""
+        """Метод проверяет нахождения активной кнопки на странице,
+         возвращает -> str название текущей активной кнопки."""
+
         expect(self.page.locator('//p[contains(@class, "d28gXp g28gXp")]'))\
             .to_be_visible()
         return ''.join(self.page.locator('//p[contains(@class, "d28gXp g28gXp")]').all_text_contents())
