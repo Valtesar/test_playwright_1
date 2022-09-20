@@ -40,5 +40,5 @@ class DocsPage:
                       max(self.files_and_names.items(), key=lambda x: x[1])[1]))
 
     def try_download_file(self):
-        """Метод скачивает файл со страницы"""
+        """Метод скачивает указанный файл со страницы"""
         pass
