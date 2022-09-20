@@ -23,7 +23,8 @@ class DocsPage:
         self.file_sizes = FileSizeTransformation.from_kb_to_mb(self.file_sizes)
 
     def pick_the_biggest_file(self):
-        """Выбирает самый большой файл из списка"""
+        """Метод выбирает самый большой находящийся на странице файл и выводит в консоль его назване и размер файла."""
+
         print('Самый большой файл находящийся на странице имеет размер:', max(self.file_sizes))
         pass
 
