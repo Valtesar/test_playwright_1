@@ -7,7 +7,8 @@ class DocsPage:
         self.page = page
         self.file_sizes = []
         self.file_names = []
-        self.files_and_names = []
+        self.files_and_names = {}
+        self.the_biggest_file = {}
 
     def get_active_button(self):
         """Метод проверяет нахождения активной кнопки на странице,
@@ -35,9 +36,13 @@ class DocsPage:
     def pick_the_biggest_file(self):
         """Метод выбирает самый большой находящийся на странице файл и выводит в консоль его назване и размер файла."""
 
+        biggest_file_name = max(self.files_and_names.items(), key=lambda x: x[1])[0].replace(u'\xa0', u' ')
+        biggest_file_size = max(self.files_and_names.items(), key=lambda x: x[1])[1]
+
+        self.the_biggest_file = (biggest_file_name, biggest_file_size)
+
         print('\nСамый большой файл находящийся на странице:\n{}\nИмеет размер:\n{} Мб'
-              .format(max(self.files_and_names.items(), key=lambda x: x[1])[0],
-                      max(self.files_and_names.items(), key=lambda x: x[1])[1]))
+              .format(self.the_biggest_file[0], self.the_biggest_file[1]))
 
     def try_download_file(self):
         """Метод скачивает указанный файл со страницы"""
