@@ -46,7 +46,10 @@ class DocsPage:
 
     def try_download_file(self):
         """Метод скачивает указанный файл со страницы"""
-        self.page.locator(f'text={self.the_biggest_file[0]}').click()
+        with self.page.context.expect_page() as new_page_info:
+            self.page.locator(f'text={self.the_biggest_file[0]}').click()
+        self.new_page = new_page_info.value
+        self.new_page.locator('//*[@id="icon"]/iron-icon').highlight()
         pass
 
     def check_downloaded_file(self):
