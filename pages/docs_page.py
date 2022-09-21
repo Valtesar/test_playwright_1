@@ -46,6 +46,7 @@ class DocsPage:
 
     def try_download_file(self):
         """Метод скачивает указанный файл со страницы"""
+        self.page.locator(f'text={self.the_biggest_file[0]}').click()
         pass
 
     def check_downloaded_file(self):
