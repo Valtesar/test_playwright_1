@@ -9,4 +9,6 @@ class TestTariffsAndDocuments:
         sleep(2)
         docs_and_tariffs_page.get_files_sizes()
         docs_and_tariffs_page.pick_the_biggest_file()
+        docs_and_tariffs_page.try_download_file()
+        sleep(3)
         pass
