@@ -69,4 +69,5 @@ class DocsPage:
             return False
 
     def open_drop_down_menu(self):
+        """Метод раскрывает все находящиеся на странице выпадающие меню."""
         pass
