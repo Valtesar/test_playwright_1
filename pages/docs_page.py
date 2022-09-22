@@ -44,13 +44,15 @@ class DocsPage:
         print('\nСамый большой файл находящийся на странице:\n{}\nИмеет размер:\n{} Мб'
               .format(self.the_biggest_file[0], self.the_biggest_file[1]))
 
-    def try_download_file(self):
+    def try_open_file(self):
         """Метод скачивает указанный файл со страницы"""
-        with self.page.context.expect_page() as new_page_info:
+        with self.page.context.expect_page(timeout=5000) as new_page_info:
             self.page.locator(f'text={self.the_biggest_file[0]}').click()
         self.new_page = new_page_info.value
-        self.new_page.locator('//*[@id="icon"]/iron-icon').highlight()
-        pass
+        if self.new_page:
+            return True
+        else:
+            return False
 
     def check_downloaded_file(self):
         """Метод проверяет скачанный файл на соответствие требованиям"""
