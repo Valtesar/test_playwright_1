@@ -5,6 +5,8 @@ class TestTariffsAndDocuments:
     """Класс для тестирования раздела тарифы и документация"""
 
     def test_files(self, start_page, docs_and_tariffs_page):
+        """Тест проверки наличия файлов тарифов и документации на странице, а так же получение их размеров"""
+
         start_page.pick_lower_menu_block('Тарифы и документы')
         sleep(3)
         assert docs_and_tariffs_page.get_active_button() == "Комплексное банковское обслуживание"
