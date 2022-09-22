@@ -18,6 +18,9 @@ class DocsPage:
             .to_be_visible()
         return ''.join(self.page.locator('//p[contains(@class, "d28gXp g28gXp")]').all_text_contents())
 
+    def switch_active_button(self, button):
+        pass
+
     def get_files_sizes(self):
         """Метод собирает названия и размеры файлов на странице,
          соединяет их в словарь в случае одинакового кол-ва пар"""
