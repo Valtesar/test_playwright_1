@@ -54,7 +54,3 @@ class DocsPage:
             return True
         else:
             return False
-
-    def check_downloaded_file(self):
-        """Метод проверяет скачанный файл на соответствие требованиям"""
-        pass
