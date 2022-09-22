@@ -3,6 +3,14 @@ from hooks.file_size_transformation import FileSizeTransformation
 
 
 class DocsPage:
+    BUTTONS = {
+        'Комплексное банковское обслуживание': 1,
+        'Проценты по вкладам, депозитам и текущим счетам': 2,
+        'Кредитные продукты': 3,
+        'Прочие тарифы': 4,
+        'Правила и инструкции': 5
+    }
+
     def __init__(self, page: Page):
         self.page = page
         self.file_sizes = []
@@ -20,7 +28,8 @@ class DocsPage:
 
     def switch_active_button(self, button):
         """Метод переключается между кнопками на странице. Получает на вход название страницы"""
-        pass
+
+        self.page.locator(f'(//p[contains(@class, "a3vPuU d3vPuU")])[{self.BUTTONS[button]}]').click()
 
     def get_files_sizes(self):
         """Метод собирает названия и размеры файлов на странице,
