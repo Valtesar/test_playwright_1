@@ -67,3 +67,6 @@ class DocsPage:
             return True
         else:
             return False
+
+    def open_drop_down_menu(self):
+        pass
