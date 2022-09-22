@@ -19,6 +19,7 @@ class DocsPage:
         return ''.join(self.page.locator('//p[contains(@class, "d28gXp g28gXp")]').all_text_contents())
 
     def switch_active_button(self, button):
+        """Метод переключается между кнопками на странице. Получает на вход название страницы"""
         pass
 
     def get_files_sizes(self):
