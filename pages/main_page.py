@@ -146,6 +146,7 @@ class AnimationBlockMain:
     @property
     def animation_time(self):
         """Метод получения значения времени анимаци экземпляра класса."""
+
         return AnimationBlockMain.animation_block_time
 
 
