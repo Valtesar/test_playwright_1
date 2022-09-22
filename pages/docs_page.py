@@ -50,6 +50,7 @@ class DocsPage:
             self.page.locator(f'text={self.the_biggest_file[0]}').click()
         self.new_page = new_page_info.value
         if self.new_page:
+            self.new_page.close()
             return True
         else:
             return False
