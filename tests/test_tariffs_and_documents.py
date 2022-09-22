@@ -14,5 +14,6 @@ class TestTariffsAndDocuments:
         docs_and_tariffs_page.get_files_sizes()
         docs_and_tariffs_page.pick_the_biggest_file()
         assert docs_and_tariffs_page.try_open_file()
-        sleep(3)
+        docs_and_tariffs_page.switch_active_button('Прочие тарифы')
+        sleep(5)
         pass
