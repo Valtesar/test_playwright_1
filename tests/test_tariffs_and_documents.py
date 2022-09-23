@@ -14,6 +14,12 @@ class TestTariffsAndDocuments:
         docs_and_tariffs_page.get_files_sizes()
         docs_and_tariffs_page.pick_the_biggest_file()
         assert docs_and_tariffs_page.try_open_file()
-        docs_and_tariffs_page.switch_active_button('Прочие тарифы')
+        docs_and_tariffs_page.switch_active_button('Комплексное банковское обслуживание')
+        sleep(2)
+        assert docs_and_tariffs_page.open_drop_down_menu()
+        sleep(2)
+        docs_and_tariffs_page.switch_active_button('Проценты по вкладам, депозитам и текущим счетам')
+        sleep(2)
+        assert docs_and_tariffs_page.open_drop_down_menu()
         sleep(5)
         pass
