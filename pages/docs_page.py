@@ -70,4 +70,8 @@ class DocsPage:
 
     def open_drop_down_menu(self):
         """Метод раскрывает все находящиеся на странице выпадающие меню."""
-        pass
+
+        count_of_dd = self.page.locator('//div[contains(@data-test-id, "accordion-header-")]').count()
+        for dd in range(count_of_dd):
+            self.page.locator(f'(//div[contains(@data-test-id, "accordion-header-{dd}")])').click()
+
