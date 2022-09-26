@@ -19,7 +19,7 @@ class GenerateRandomData:
         return fio_string
 
     @classmethod
-    def get_random_mobile(cls):
+    def get_random_mobile(cls) -> str:
         """Метод генерирует случайный номер телефона.
 
         Значение номера телефона выбирается из указанного диапазона чисел.
@@ -30,7 +30,7 @@ class GenerateRandomData:
         return str(mobile)
 
     @classmethod
-    def get_random_email(cls):
+    def get_random_email(cls) -> str:
         """Метод генерирует случайный адрес электронной почты.
 
         Имя и домен электронной почты генерируются из случайных букв с указанной длинной.
