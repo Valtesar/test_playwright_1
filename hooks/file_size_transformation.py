@@ -3,6 +3,8 @@ class FileSizeTransformation:
 
     @staticmethod
     def from_kb_to_mb(values: list) -> list:
+        """Метод преобразовывает список значений из КБ в МБ при необходимости"""
+
         result = []
 
         for value in values:
