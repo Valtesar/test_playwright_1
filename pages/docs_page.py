@@ -81,6 +81,6 @@ class DocsPage:
         if self.page.locator('//div[@class="l3IDKB i3IDKB"]').count() == count_of_dd:
             return True
         else:
-            print("check this out", count_of_dd, self.page.locator('//div[@class="l3IDKB i3IDKB"]').count())
+            print("Expected error ", count_of_dd, self.page.locator('//div[@class="l3IDKB i3IDKB"]').count())
             print(self.files_and_names)
             return False
