@@ -43,7 +43,7 @@ class GenerateRandomData:
         return email
 
     @classmethod
-    def get_random_gender(cls):
+    def get_random_gender(cls) -> str:
         """Метод генерирует случайный пол человека.
 
         Пол выбирается случайным образом из мужского и женского.
