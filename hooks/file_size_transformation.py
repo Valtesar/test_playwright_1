@@ -1,4 +1,6 @@
 class FileSizeTransformation:
+    """Класс для преобразования размеров файлов в разные еденицы измерения"""
+
     @staticmethod
     def from_kb_to_mb(values: list) -> list:
         result = []
