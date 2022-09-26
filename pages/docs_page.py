@@ -3,6 +3,8 @@ from hooks.file_size_transformation import FileSizeTransformation
 
 
 class DocsPage:
+    """Класс для работы со страницей документов и его экземплярами"""
+
     BUTTONS = {
         'Комплексное банковское обслуживание': 1,
         'Проценты по вкладам, депозитам и текущим счетам': 2,
@@ -59,6 +61,7 @@ class DocsPage:
 
     def try_open_file(self):
         """Метод скачивает указанный файл со страницы"""
+
         with self.page.context.expect_page(timeout=5000) as new_page_info:
             self.page.locator(f'text={self.the_biggest_file[0]}').click()
         self.new_page = new_page_info.value
