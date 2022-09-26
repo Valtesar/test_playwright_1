@@ -59,7 +59,7 @@ class DocsPage:
         print('\nСамый большой файл находящийся на странице:\n{}\nИмеет размер:\n{} Мб'
               .format(self.the_biggest_file[0], self.the_biggest_file[1]))
 
-    def try_open_file(self):
+    def try_open_file(self) -> bool:
         """Метод скачивает указанный файл со страницы"""
 
         with self.page.context.expect_page(timeout=5000) as new_page_info:
