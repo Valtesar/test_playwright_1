@@ -54,7 +54,7 @@ class GenerateRandomData:
         return gender
 
     @classmethod
-    def get_random_passport_series(cls):
+    def get_random_passport_series(cls) -> str:
         """Метод генерирует случайную серию паспорта.
 
         Значение серии паспорта выбирается из указанного диапазона чисел.
