@@ -22,4 +22,4 @@ class TestTariffsAndDocuments:
         sleep(2)
         assert docs_and_tariffs_page.open_drop_down_menu()
         sleep(5)
-        pass
+
