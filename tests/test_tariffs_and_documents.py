@@ -16,10 +16,6 @@ class TestTariffsAndDocuments:
         assert docs_and_tariffs_page.try_open_file()
         docs_and_tariffs_page.switch_active_button('Комплексное банковское обслуживание')
         sleep(2)
-        assert docs_and_tariffs_page.open_drop_down_menu()
-        sleep(2)
-        docs_and_tariffs_page.switch_active_button('Проценты по вкладам, депозитам и текущим счетам')
-        sleep(2)
-        assert docs_and_tariffs_page.open_drop_down_menu()
+        docs_and_tariffs_page.output_information()
         sleep(5)
 
