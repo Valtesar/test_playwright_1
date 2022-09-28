@@ -56,9 +56,6 @@ class DocsPage:
 
         self.the_biggest_file = (biggest_file_name, biggest_file_size)
 
-        print('\nСамый большой файл находящийся на странице:\n{}\nИмеет размер:\n{} Мб'
-              .format(self.the_biggest_file[0], self.the_biggest_file[1]))
-
     def try_open_file(self) -> bool:
         """Метод скачивает указанный файл со страницы"""
 
@@ -73,4 +70,6 @@ class DocsPage:
 
     def output_information(self):
         """Метод раскрывает все находящиеся на странице выпадающие меню."""
-        pass
+
+        print('\nСамый большой файл находящийся на странице:\n{}\nИмеет размер:\n{} Мб'
+              .format(self.the_biggest_file[0], self.the_biggest_file[1]))
