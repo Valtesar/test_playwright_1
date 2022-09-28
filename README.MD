@@ -1,4 +1,4 @@
-<h2>A set of simple tests for automated testing (in developing)</h2>
+<h2>A set of simple tests for automated testing</h2>
 
 The project was written using the Python 3.8 programming language, the playwright framework and the pytest test framework.
 
@@ -12,13 +12,10 @@ Before running tests to set up dependencies, use the command:
 
 `pip install -r requirements.txt`
 
-* If you are using a virtual environment use the command
+* If you are using a virtual environment use the command while in the folder "tests"
 
         pytest setup.py
 
-* If you are not using a virtual environment use the command 
+* If you are not using a virtual environment use the command while in the folder "tests"
 
         python pytest setup.py
-<h2>Example</h2>
-
-Example of a successfully completed test.
