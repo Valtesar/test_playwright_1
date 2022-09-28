@@ -71,6 +71,6 @@ class DocsPage:
     def output_information(self):
         """Метод выводит информацию о файлах находящихся на странице."""
 
-        print('\nСамый большой файл находящийся на странице:\n{}\n\nИмеет размер:\n{} Мб'
+        print('\n\nСамый большой файл находящийся на странице:\n{}\nИмеет размер:\n{} Мб'
               .format(self.the_biggest_file[0], self.the_biggest_file[1]))
         print(f'\nКоличество найденных файлов на странице: {len(self.files_and_names)}')
