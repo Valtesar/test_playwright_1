@@ -71,16 +71,6 @@ class DocsPage:
         else:
             return False
 
-    def open_drop_down_menu(self):
+    def output_information(self):
         """Метод раскрывает все находящиеся на странице выпадающие меню."""
-
-        count_of_dd = self.page.locator('//div[contains(@data-test-id, "accordion-header-")]').count()
-
-        for dd in range(count_of_dd):
-            self.page.locator(f'(//div[contains(@data-test-id, "accordion-header-{dd}")])').click()
-        if self.page.locator('//div[@class="l3IDKB i3IDKB"]').count() == count_of_dd:
-            return True
-        else:
-            print("Expected error ", count_of_dd, self.page.locator('//div[@class="l3IDKB i3IDKB"]').count())
-            print(self.files_and_names)
-            return False
+        pass
